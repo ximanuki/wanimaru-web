@@ -96,7 +96,7 @@ export const STATISTICS: Statistics = {
 };
 
 // --------------------------------------------------
-// ニュースカテゴリー
+// ニュースカテゴリー（レガシー対応）
 // --------------------------------------------------
 
 export const NEWS_CATEGORIES = {
@@ -121,6 +121,17 @@ export const NEWS_CATEGORIES = {
     description: '活動実績・事業報告',
   },
 } as const;
+
+// カテゴリーカラーのマッピング（microCMSカテゴリー用）
+export const CATEGORY_COLORS: Record<string, string> = {
+  '更新情報': 'bg-blue-100 text-blue-800',
+  'テクノロジー': 'bg-purple-100 text-purple-800',
+  'チュートリアル': 'bg-green-100 text-green-800',
+  'お知らせ': 'bg-blue-100 text-blue-800',
+  'イベント': 'bg-green-100 text-green-800',
+  '採用情報': 'bg-orange-100 text-orange-800',
+  '活動報告': 'bg-purple-100 text-purple-800',
+};
 
 // --------------------------------------------------
 // フォーム設定

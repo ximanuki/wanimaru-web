@@ -290,7 +290,15 @@ export async function getNewsList(query: NewsQuery = {}): Promise<NewsListRespon
     offset,
   };
 
-  if (category) params.filters = `category[equals]${category}`;
+  if (category) {
+    // カテゴリーがIDの場合は直接使用、文字列の場合はカテゴリー検索
+    if (category.includes('-')) {
+      params.filters = `category[equals]${category}`;
+    } else {
+      // 旧形式のカテゴリー名での互換性
+      params.filters = `category[equals]${category}`;
+    }
+  }
   if (q) params.q = q;
   if (orders) params.orders = orders;
 
@@ -356,6 +364,19 @@ export async function getImportantNews(limit: number = 5): Promise<News[]> {
  */
 export async function getActivitiesList(): Promise<Activity[]> {
   const response = await apiRequest<MicroCMSResponse<Activity>>('/activities');
+  return response.contents;
+}
+
+// --------------------------------------------------
+// カテゴリー API
+// --------------------------------------------------
+
+/**
+ * カテゴリー一覧を取得する
+ * @returns カテゴリー一覧
+ */
+export async function getCategoriesList(): Promise<Category[]> {
+  const response = await apiRequest<MicroCMSResponse<Category>>('/categories');
   return response.contents;
 }
 

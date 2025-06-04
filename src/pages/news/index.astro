@@ -2,14 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/common/Header.astro';
 import Footer from '../../components/common/Footer.astro';
-import { getNewsList } from '../../lib/microcms';
-import { NEWS_CATEGORIES } from '../../lib/constants';
+import { getNewsList, getCategoriesList } from '../../lib/microcms';
+import { NEWS_CATEGORIES, CATEGORY_COLORS } from '../../lib/constants';
 import { formatDate } from '../../lib/utils';
 
-// Get news data
+// Get category from URL params
+const url = new URL(Astro.request.url);
+const selectedCategory = url.searchParams.get('category');
+
+// Get categories from microCMS
+const categories = await getCategoriesList();
+
+// Get news data with optional category filter
 const newsData = await getNewsList({
   limit: 10,
   offset: 0,
+  category: selectedCategory || undefined,
 });
 
 const { contents: news, totalCount } = newsData;
@@ -39,13 +47,23 @@ const { contents: news, totalCount } = newsData;
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="flex flex-wrap justify-center gap-4">
-            <button class="px-6 py-2 rounded-full bg-primary text-white font-medium">
+            <a 
+              href="/news" 
+              class={`px-6 py-2 rounded-full font-medium transition-colors ${
+                !selectedCategory ? 'bg-primary text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+              }`}
+            >
               すべて
-            </button>
-            {Object.entries(NEWS_CATEGORIES).map(([key, category]) => (
-              <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
-                {category.label}
-              </button>
+            </a>
+            {categories.map((category) => (
+              <a 
+                href={`/news?category=${category.id}`}
+                class={`px-6 py-2 rounded-full font-medium transition-colors ${
+                  selectedCategory === category.id ? 'bg-primary text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                {category.name}
+              </a>
             ))}
           </div>
         </div>
@@ -68,7 +86,7 @@ const { contents: news, totalCount } = newsData;
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                       <div class="flex-1">
                         <div class="flex items-center mb-2">
-                          <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : 'bg-gray-100 text-gray-800'}`}>
+                          <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : (CATEGORY_COLORS[item.category?.name || ''] || 'bg-gray-100 text-gray-800')}`}>
                             {typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.label || item.category) : item.category?.name || 'お知らせ'}
                           </span>
                           <time class="text-sm text-gray-600">
@@ -116,7 +134,7 @@ const { contents: news, totalCount } = newsData;
                     )}
                     <div class="flex-1 p-6">
                       <div class="flex items-center mb-3">
-                        <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : 'bg-gray-100 text-gray-800'}`}>
+                        <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : (CATEGORY_COLORS[item.category?.name || ''] || 'bg-gray-100 text-gray-800')}`}>
                           {typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.label || item.category) : item.category?.name || 'お知らせ'}
                         </span>
                         <time class="text-sm text-gray-600">
