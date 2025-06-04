@@ -21,7 +21,9 @@ const MICROCMS_API_KEY = import.meta.env.PUBLIC_MICROCMS_API_KEY;
 const MICROCMS_SERVICE_DOMAIN = import.meta.env.PUBLIC_MICROCMS_SERVICE_DOMAIN;
 
 if (!MICROCMS_API_KEY || !MICROCMS_SERVICE_DOMAIN) {
-  console.warn('microCMS API credentials are not set. Using mock data for development.');
+  if (import.meta.env.DEV) {
+    console.warn('microCMS API credentials are not set. Using mock data for development.');
+  }
 }
 
 const BASE_URL = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1`;
@@ -61,9 +63,11 @@ async function apiRequest<T>(endpoint: string, params?: Record<string, any>): Pr
       
       return data;
     } catch (error) {
-      console.error('microCMS API request failed:', error);
+      if (import.meta.env.DEV) {
+        console.error('microCMS API request failed:', error);
+      }
       // エラー時はモックデータにフォールバック
-      return getMockData<T>(endpoint, params);
+      throw new Error(`Failed to fetch data from microCMS: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }
 
@@ -309,7 +313,9 @@ export async function getNewsDetail(slug: string): Promise<News | null> {
   try {
     return await apiRequest<News>(`/news/${slug}`);
   } catch (error) {
-    console.error(`Failed to fetch news detail: ${slug}`, error);
+    if (import.meta.env.DEV) {
+      console.error(`Failed to fetch news detail: ${slug}`, error);
+    }
     return null;
   }
 }
@@ -386,7 +392,7 @@ export async function checkMicroCMSConnection(): Promise<boolean> {
  * 開発環境でのデータリフレッシュ
  */
 export function refreshMockData(): void {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     devLog('Mock data refreshed');
     // 実際の実装では、キャッシュクリアなどの処理を行う
   }

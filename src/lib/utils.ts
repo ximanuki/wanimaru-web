@@ -352,7 +352,9 @@ export function setLocalStorage(key: string, value: any): void {
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      console.warn('Failed to save to localStorage:', error);
+      if (import.meta.env.DEV) {
+        console.warn('Failed to save to localStorage:', error);
+      }
     }
   }
 }
@@ -369,7 +371,9 @@ export function getLocalStorage<T>(key: string, defaultValue: T): T {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : defaultValue;
     } catch (error) {
-      console.warn('Failed to read from localStorage:', error);
+      if (import.meta.env.DEV) {
+        console.warn('Failed to read from localStorage:', error);
+      }
       return defaultValue;
     }
   }
@@ -385,7 +389,9 @@ export function removeLocalStorage(key: string): void {
     try {
       localStorage.removeItem(key);
     } catch (error) {
-      console.warn('Failed to remove from localStorage:', error);
+      if (import.meta.env.DEV) {
+        console.warn('Failed to remove from localStorage:', error);
+      }
     }
   }
 }
@@ -400,7 +406,7 @@ export function removeLocalStorage(key: string): void {
  * @param data - データ
  */
 export function devLog(message: string, data?: any): void {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     if (data) {
       console.log(`[Dev] ${message}`, data);
     } else {

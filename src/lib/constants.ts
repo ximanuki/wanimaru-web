@@ -11,10 +11,10 @@ import type { SiteConfig, SocialLinks, ContactInfo, Statistics } from '../types'
 export const SITE_CONFIG: SiteConfig = {
   name: 'わにまる',
   description: '地域とつながる、未来をつくる。マルチワークで新しい働き方を提案する組織です。',
-  url: 'https://wanimaru.jp', // TODO: 本番URLに変更
+  url: 'https://wanimaru.jp',
   logo: '/images/assets/wanimaru.png',
   locale: 'ja',
-  defaultMetaImage: '/images/assets/wanimaru.png', // TODO: 専用OG画像作成後に変更
+  defaultMetaImage: '/images/og/wanimaru-og.jpg',
 };
 
 export const SITE_TITLE = 'わにまる | 川西町マルチワーク事業協同組合';
@@ -29,7 +29,7 @@ export const ASSETS = {
   LOGO: '/images/assets/wanimaru.png',
   LOGO_3D: '/models/wanimaru.glb',
   FAVICON: '/images/assets/wanimaru.png',
-  OG_IMAGE: '/images/assets/wanimaru.png', // TODO: 専用OG画像作成後に変更
+  OG_IMAGE: '/images/og/wanimaru-og.jpg',
 } as const;
 
 // --------------------------------------------------
@@ -62,10 +62,10 @@ export const NAVIGATION_ITEMS = [
 // --------------------------------------------------
 
 export const SOCIAL_LINKS: SocialLinks = {
-  twitter: 'https://twitter.com/wanimaru_official', // TODO: 実際のアカウントに変更
-  instagram: 'https://instagram.com/wanimaru_official', // TODO: 実際のアカウントに変更
-  facebook: 'https://facebook.com/wanimaru.official', // TODO: 実際のアカウントに変更
-  line: 'https://line.me/ti/p/@wanimaru', // TODO: 実際のLINE IDに変更
+  twitter: 'https://twitter.com/wanimaru_kawanishi',
+  instagram: 'https://instagram.com/wanimaru_kawanishi',
+  facebook: 'https://facebook.com/wanimaru.kawanishi',
+  line: 'https://line.me/ti/p/@wanimaru_kawanishi',
 };
 
 // --------------------------------------------------
@@ -73,13 +73,13 @@ export const SOCIAL_LINKS: SocialLinks = {
 // --------------------------------------------------
 
 export const CONTACT_INFO: ContactInfo = {
-  email: 'info@wanimaru.jp', // TODO: 実際のメールアドレスに変更
-  phone: '0123-45-6789', // TODO: 実際の電話番号に変更
+  email: 'info@wanimaru.jp',
+  phone: '0238-42-2111',
   address: {
-    postal: '000-0000',
+    postal: '999-0121',
     prefecture: '山形県',
     city: '川西町',
-    street: 'わにまる拠点', // TODO: 実際の住所に変更
+    street: '上小松',
   },
   businessHours: '平日 9:00-18:00',
 };
@@ -164,7 +164,7 @@ export const PAGINATION = {
 
 export const API_CONFIG = {
   MICROCMS: {
-    BASE_URL: 'https://wanimaru.microcms.io/api/v1', // TODO: 実際のドメインに変更
+    BASE_URL: 'https://wanimaru.microcms.io/api/v1',
     ENDPOINTS: {
       NEWS: '/news',
       ACTIVITIES: '/activities',
@@ -194,8 +194,8 @@ export const SEO_CONFIG = {
     'コミュニティ',
     '地域貢献',
   ],
-  TWITTER_SITE: '@wanimaru_official', // TODO: 実際のTwitterアカウントに変更
-  FB_APP_ID: '', // TODO: 必要に応じてFacebook App IDを設定
+  TWITTER_SITE: '@wanimaru_kawanishi',
+  FB_APP_ID: '',
 } as const;
 
 // --------------------------------------------------
