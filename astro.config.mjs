@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://wanimaru.com', // TODO: 本番URLに変更
+  site: 'https://wanimaru.jp',
   integrations: [
     react(),
     tailwind(),
@@ -14,6 +14,27 @@ export default defineConfig({
   ],
   output: 'static',
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    inlineStylesheets: 'auto'
+  },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            ui: ['@radix-ui/react-dialog', '@radix-ui/react-label', '@radix-ui/react-navigation-menu']
+          }
+        }
+      }
+    },
+    optimizeDeps: {
+      exclude: ['gsap']
+    }
+  },
+  image: {
+    remotePatterns: [{
+      protocol: 'https'
+    }]
   }
 });
