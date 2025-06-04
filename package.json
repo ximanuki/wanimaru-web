@@ -9,6 +9,45 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.2"
+    "@agentdeskai/browser-tools-mcp": "^1.2.1",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "@brightdata/mcp": "^2.0.0",
+    "@constellix/ai-scraper-mcp": "^1.0.1",
+    "@executeautomation/playwright-mcp-server": "^1.0.5",
+    "@mcp-registry/highlight-github-mcp": "^1.0.2",
+    "@modelcontextprotocol/inspector": "^0.13.0",
+    "@modelcontextprotocol/server-brave-search": "^0.6.2",
+    "@modelcontextprotocol/server-github": "^2025.4.8",
+    "@modelcontextprotocol/server-postgres": "^0.6.2",
+    "@modelcontextprotocol/server-sequential-thinking": "^0.6.2",
+    "@playwright/mcp": "^0.0.28",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-navigation-menu": "^1.2.13",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@upstash/context7-mcp": "^1.0.12",
+    "astro": "^5.8.2",
+    "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "claude-github-mcp": "^1.0.1",
+    "clsx": "^2.1.1",
+    "figma-mcp": "^0.1.4",
+    "figma-mcp-pro": "^3.2.32",
+    "firecrawl-mcp": "^1.11.0",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.513.0",
+    "postcss": "^8.5.4",
+    "puppeteer-mcp-server": "^0.7.2",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3"
   }
 }

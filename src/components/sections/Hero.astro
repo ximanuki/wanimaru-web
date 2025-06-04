@@ -1,0 +1,79 @@
+---
+// Hero section component
+import { Button } from '../ui/button';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-cool"></div>
+  
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10 container text-center text-gray-800 section-padding">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <!-- Main heading -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up font-heading">
+        地域とつながる、<br class="sm:hidden"><span class="text-accent">未来をつくる</span>
+      </h1>
+      
+      <!-- Subheading -->
+      <p class="text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 animate-fade-in-up animation-delay-200">
+        ひとつじゃない、いくつもの「はたらく」を
+      </p>
+      
+      <!-- Description -->
+      <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-600 animate-fade-in-up animation-delay-400">
+        わにまるは、マルチワークという新しい働き方を通じて、<br class="hidden md:block">
+        地域コミュニティとのつながりを深め、持続可能な未来を創造する組織です。<br class="hidden md:block">
+        あなたらしい働き方で、まちとともに成長しませんか？
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-600">
+        <Button 
+          client:load
+          asChild
+          variant="default" 
+          size="lg"
+          className="bg-accent hover:bg-accent-dark text-white font-bold shadow-medium hover:shadow-large transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
+        >
+          <a href="/join">参加する</a>
+        </Button>
+        <Button 
+          client:load
+          asChild
+          variant="outline" 
+          size="lg"
+          className="border-primary text-primary hover:bg-primary hover:text-white shadow-soft hover:shadow-medium transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
+        >
+          <a href="/about">わにまるについて</a>
+        </Button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+    <div class="animate-bounce">
+      <svg class="w-6 h-6 text-primary opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

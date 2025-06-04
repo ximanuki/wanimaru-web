@@ -1,33 +1,55 @@
-# Astro Starter Kit: Minimal
+# わにまる Webサイト
 
-```sh
-npm create astro@latest -- --template minimal
-```
+地域とつながる、未来をつくる。マルチワークで新しい働き方を提案する組織「わにまる」の公式ウェブサイトです。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🌟 概要
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+このプロジェクトは、Astro + React + TypeScript + Tailwind CSSで構築されたモダンなウェブサイトです。
+レスポンシブデザイン、SEO最適化、パフォーマンス最適化を重視して開発されています。
 
-## 🚀 Project Structure
+## 🏗️ 技術スタック
 
-Inside of your Astro project, you'll see the following folders and files:
+- **フレームワーク**: Astro 5.x
+- **UI ライブラリ**: React 18
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **アニメーション**: GSAP
+- **アイコン**: Lucide React
+- **CMS**: microCMS (予定)
+- **フォーム**: Formrun (予定)
+
+## 🚀 プロジェクト構造
 
 ```text
-/
-├── public/
+wanimaru-web/
+├── public/                 # 静的ファイル
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/         # コンポーネント
+│   │   ├── common/        # 共通コンポーネント (Header, Footer, Button)
+│   │   ├── sections/      # セクションコンポーネント (Hero, Features)
+│   │   └── forms/         # フォームコンポーネント
+│   ├── layouts/           # レイアウトコンポーネント
+│   │   └── BaseLayout.astro
+│   ├── pages/             # ページファイル
+│   │   └── index.astro
+│   ├── styles/            # スタイルファイル
+│   │   └── global.css
+│   └── lib/               # ユーティリティ・設定
+├── .env.example           # 環境変数テンプレート
+├── astro.config.mjs       # Astro設定
+├── tailwind.config.mjs    # Tailwind設定
+└── tsconfig.json          # TypeScript設定
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🎨 デザインシステム
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### カラーパレット
+- **プライマリ**: #2A6F4E (緑)
+- **セカンダリ**: #F1E8D9 (ベージュ)
+- **アクセント**: #FFB400 (オレンジ)
 
-Any static assets, like images, can be placed in the `public/` directory.
+### フォント
+- **メイン**: Noto Sans JP
 
 ## 🧞 Commands
 

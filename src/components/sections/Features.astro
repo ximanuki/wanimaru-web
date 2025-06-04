@@ -1,0 +1,166 @@
+---
+// Features section component
+import { Button } from '../ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+---
+
+<section class="section-padding bg-gradient-soft">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+        わにまるの<span class="text-gradient">3つの特徴</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        マルチワークを通じて、新しい働き方とコミュニティの形を提案します
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Feature 1: Flexible Work -->
+      <div class="group">
+        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+          <CardHeader>
+            <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+          <CardTitle className="text-xl md:text-2xl">
+            柔軟な働き方
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-gray-600 leading-relaxed mb-6">
+            一つの職業に縛られることなく、複数の分野で活動することで、
+            自分らしいワークライフバランスを実現できます。
+            時間や場所に制約されない、新しい働き方を提案します。
+          </CardDescription>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              リモートワーク対応
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              フレキシブルタイム
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              プロジェクトベース
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+      </div>
+
+      <!-- Feature 2: Community Connection -->
+      <div class="group">
+        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+          <CardHeader>
+            <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+          <CardTitle className="text-xl md:text-2xl">
+            地域とのつながり
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-gray-600 leading-relaxed mb-6">
+            地域の課題解決や活性化に貢献しながら、
+            地域住民や企業との深いつながりを築きます。
+            持続可能なコミュニティの形成を目指します。
+          </CardDescription>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              地域課題解決
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              企業連携
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              コミュニティ支援
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+      </div>
+
+      <!-- Feature 3: Skill Development -->
+      <div class="group">
+        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+          <CardHeader>
+            <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+          <CardTitle className="text-xl md:text-2xl">
+            スキルの多様化
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="text-gray-600 leading-relaxed mb-6">
+            様々なプロジェクトに参加することで、
+            幅広いスキルと経験を積むことができます。
+            継続的な学習と成長をサポートします。
+          </CardDescription>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary-light mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              スキル習得支援
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary-light mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              メンタリング制度
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-4 h-4 text-primary-light mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              研修プログラム
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16">
+      <p class="text-lg text-gray-600 mb-6">
+        わにまると一緒に、新しい働き方を始めませんか？
+      </p>
+      <Button 
+        client:load
+        asChild
+        size="lg"
+        className="shadow-medium hover:shadow-large transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
+      >
+        <a href="/join">参加について詳しく見る</a>
+      </Button>
+    </div>
+  </div>
+</section>

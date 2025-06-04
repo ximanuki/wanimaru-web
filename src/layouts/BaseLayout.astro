@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title, 
+  description = "わにまる - 地域とつながる、未来をつくる。マルチワークで新しい働き方を提案する組織です。", 
+  keywords = "わにまる,マルチワーク,地域,コミュニティ,働き方,副業,複業",
+  ogImage = "/og-image.jpg",
+  noindex = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteTitle = title === "わにまる" ? title : `${title} | わにまる`;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/images/assets/wanimaru.png" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Basic Meta Tags -->
+  <title>{siteTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <link rel="canonical" href={canonicalURL} />
+  {noindex && <meta name="robots" content="noindex,nofollow" />}
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+  <meta property="og:site_name" content="わにまる" />
+  <meta property="og:locale" content="ja_JP" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={siteTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  
+  <!-- Schema.org structured data will be added by individual pages -->
+</head>
+<body class="font-sans antialiased">
+  <div id="app" class="min-h-screen flex flex-col">
+    <header>
+      <slot name="header" />
+    </header>
+    
+    <main class="flex-1">
+      <slot />
+    </main>
+    
+    <footer>
+      <slot name="footer" />
+    </footer>
+  </div>
+  
+  <!-- Google Analytics (TODO: 本番環境でのみ有効化) -->
+  {import.meta.env.PUBLIC_GA_MEASUREMENT_ID && (
+    <script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_MEASUREMENT_ID}`}></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', import.meta.env.PUBLIC_GA_MEASUREMENT_ID);
+    </script>
+  )}
+</body>
+</html>

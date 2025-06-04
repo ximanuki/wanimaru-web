@@ -1,16 +1,55 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Features from '../components/sections/Features.astro';
+import { Button } from '../components/ui/button';
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+  title="わにまる"
+  description="地域とつながる、未来をつくる。マルチワークで新しい働き方を提案する組織です。"
+  keywords="わにまる,マルチワーク,地域,コミュニティ,働き方,副業,複業"
+>
+  <Header slot="header" />
+  
+  <!-- Main Content -->
+  <Hero />
+  <Features />
+  
+  <!-- Additional sections can be added here -->
+  <section class="section-padding bg-white">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+        始めませんか？新しい働き方を
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+        わにまるは、あなたの「はたらく」を応援します。<br>
+        地域とのつながりを大切にしながら、持続可能な未来を一緒に創造しましょう。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button 
+          client:load
+          asChild
+          size="lg"
+          className="shadow-medium hover:shadow-large transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
+        >
+          <a href="/join">参加する</a>
+        </Button>
+        <Button 
+          client:load
+          asChild
+          variant="outline"
+          size="lg"
+          className="shadow-soft hover:shadow-medium transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
+        >
+          <a href="/contact">お問い合わせ</a>
+        </Button>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>
