@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/common/Header.astro';
+import Footer from '../../components/common/Footer.astro';
+import { getNewsList } from '../../lib/microcms';
+import { NEWS_CATEGORIES } from '../../lib/constants';
+import { formatDate } from '../../lib/utils';
+
+// Get news data
+const newsData = await getNewsList({
+  limit: 10,
+  offset: 0,
+});
+
+const { contents: news, totalCount } = newsData;
+---
+
+<BaseLayout title="ニュース" description="わにまるの最新ニュース・お知らせをご覧いただけます。組合員募集、イベント情報、活動報告など随時更新しています。">
+  <Header slot="header" />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-soft py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            ニュース
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            わにまるの最新情報をお届けします。<br>
+            お知らせ、イベント情報、活動報告など随時更新中です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-white border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-4">
+            <button class="px-6 py-2 rounded-full bg-primary text-white font-medium">
+              すべて
+            </button>
+            {Object.entries(NEWS_CATEGORIES).map(([key, category]) => (
+              <button class="px-6 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors">
+                {category.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important News -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          {news.filter(item => item.isImportant).length > 0 && (
+            <div class="mb-12">
+              <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                重要なお知らせ
+              </h2>
+              <div class="space-y-4">
+                {news.filter(item => item.isImportant).map((item) => (
+                  <div class="bg-accent-50 border-l-4 border-accent p-6 rounded-r-xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                      <div class="flex-1">
+                        <div class="flex items-center mb-2">
+                          <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : 'bg-gray-100 text-gray-800'}`}>
+                            {typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.label || item.category) : item.category?.name || 'お知らせ'}
+                          </span>
+                          <time class="text-sm text-gray-600">
+                            {formatDate(item.publishedAt)}
+                          </time>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                          <a href={`/news/${item.slug || item.id}`} class="hover:text-primary transition-colors">
+                            {item.title}
+                          </a>
+                        </h3>
+                        {item.excerpt && (
+                          <p class="text-gray-600 text-sm line-clamp-2">
+                            {item.excerpt}
+                          </p>
+                        )}
+                      </div>
+                      <div class="mt-4 md:mt-0 md:ml-6">
+                        <a href={`/news/${item.slug || item.id}`} class="inline-block bg-accent text-white px-4 py-2 rounded-full text-sm hover:bg-accent-dark transition-colors">
+                          詳しく見る
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Regular News -->
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">最新ニュース</h2>
+            <div class="grid gap-8">
+              {news.filter(item => !item.isImportant).map((item) => (
+                <article class="bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-medium transition-shadow">
+                  <div class="md:flex">
+                    {item.thumbnail && (
+                      <div class="md:w-72 h-48 md:h-auto">
+                        <img 
+                          src={item.thumbnail.url} 
+                          alt={item.thumbnail.alt || item.title}
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <div class="flex-1 p-6">
+                      <div class="flex items-center mb-3">
+                        <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.color || 'bg-gray-100 text-gray-800') : 'bg-gray-100 text-gray-800'}`}>
+                          {typeof item.category === 'string' ? (NEWS_CATEGORIES[item.category]?.label || item.category) : item.category?.name || 'お知らせ'}
+                        </span>
+                        <time class="text-sm text-gray-600">
+                          {formatDate(item.publishedAt)}
+                        </time>
+                      </div>
+                      <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                        <a href={`/news/${item.slug || item.id}`} class="hover:text-primary transition-colors">
+                          {item.title}
+                        </a>
+                      </h3>
+                      {item.excerpt && (
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                          {item.excerpt}
+                        </p>
+                      )}
+                      {item.tags && item.tags.length > 0 && (
+                        <div class="flex flex-wrap gap-2 mb-4">
+                          {item.tags.map((tag) => (
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <a href={`/news/${item.slug || item.id}`} class="inline-flex items-center text-primary hover:text-primary-600 transition-colors">
+                        続きを読む
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          {totalCount > 10 && (
+            <div class="mt-12 flex justify-center">
+              <nav class="flex items-center space-x-2">
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-50">
+                  前へ
+                </button>
+                <button class="px-3 py-2 bg-primary text-white rounded-md">
+                  1
+                </button>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                  2
+                </button>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                  3
+                </button>
+                <span class="px-3 py-2 text-gray-500">...</span>
+                <button class="px-3 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                  次へ
+                </button>
+              </nav>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">最新情報をお届けします</h2>
+          <p class="text-xl mb-8 text-primary-50">
+            わにまるの最新ニュースやイベント情報をメールでお知らせします
+          </p>
+          <div class="max-w-md mx-auto">
+            <form class="flex">
+              <input 
+                type="email" 
+                placeholder="メールアドレスを入力"
+                class="flex-1 px-4 py-3 rounded-l-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              <button class="bg-accent text-white px-6 py-3 rounded-r-full hover:bg-accent-dark transition-colors">
+                登録
+              </button>
+            </form>
+            <p class="text-xs text-primary-100 mt-2">
+              ※ 配信停止はいつでも可能です
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

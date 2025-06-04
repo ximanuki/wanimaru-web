@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+---
+
+<BaseLayout title="わにまるとは" description="川西町マルチワーク事業協同組合「わにまる」について。私たちの理念、活動内容、メンバーをご紹介します。">
+  <Header slot="header" />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-soft py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            わにまるとは
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            川西町マルチワーク事業協同組合「わにまる」は、<br>
+            地域での新しい働き方「マルチワーク」を推進し、<br>
+            地域とつながる未来をつくる組織です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+              <h2 class="text-3xl font-bold text-gray-900">私たちのビジョン</h2>
+              <div class="bg-white p-8 rounded-xl shadow-soft">
+                <h3 class="text-xl font-semibold text-primary mb-4">地域とつながる、未来をつくる</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  従来の働き方にとらわれない、新しい価値観での働き方を提案します。
+                  地域の魅力を活かしながら、個人の可能性を最大限に引き出し、
+                  持続可能なコミュニティの構築を目指しています。
+                </p>
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <h2 class="text-3xl font-bold text-gray-900">私たちのミッション</h2>
+              <div class="bg-white p-8 rounded-xl shadow-soft">
+                <h3 class="text-xl font-semibold text-primary mb-4">ひとつじゃない、いくつもの「はたらく」を</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  マルチワークという働き方を通じて、多様なスキルと経験を持つ人材を育成し、
+                  地域経済の活性化と個人のライフスタイルの充実を両立させます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Organization -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">組合について</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">設立背景</h3>
+              <p class="text-gray-600 leading-relaxed">
+                地方での働き方の選択肢を増やし、地域の持続可能な発展を支援するため、
+                2021年に川西町マルチワーク事業協同組合「わにまる」を設立しました。
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">活動内容</h3>
+              <ul class="text-gray-600 space-y-2">
+                <li>• マルチワーク支援・コンサルティング</li>
+                <li>• スキルアップ研修プログラム</li>
+                <li>• 地域企業とのマッチング</li>
+                <li>• コミュニティ形成・ネットワーキング</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">組合概要</h3>
+              <dl class="text-gray-600 space-y-2">
+                <div class="flex">
+                  <dt class="w-20 font-medium">名称:</dt>
+                  <dd>川西町マルチワーク事業協同組合</dd>
+                </div>
+                <div class="flex">
+                  <dt class="w-20 font-medium">設立:</dt>
+                  <dd>2021年4月</dd>
+                </div>
+                <div class="flex">
+                  <dt class="w-20 font-medium">所在地:</dt>
+                  <dd>山形県川西町上小松</dd>
+                </div>
+              </dl>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">実績</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">100+</div>
+                  <div class="text-sm text-gray-600">参加メンバー</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">50+</div>
+                  <div class="text-sm text-gray-600">プロジェクト実績</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">10+</div>
+                  <div class="text-sm text-gray-600">協力企業・団体</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">3</div>
+                  <div class="text-sm text-gray-600">運営年数</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Representative Message -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">代表メッセージ</h2>
+          
+          <div class="bg-white p-8 rounded-xl shadow-soft">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="flex-shrink-0">
+                <div class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center">
+                  <span class="text-gray-500">写真準備中</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">代表理事 田中太郎</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  「わにまる」は、地域の皆様と共に新しい働き方を創造していく組織です。
+                  一人ひとりが持つ多様なスキルと経験を活かし、地域の課題解決と個人の成長を両立させることで、
+                  持続可能なコミュニティづくりに貢献していきたいと考えています。
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                  これからも地域の皆様のニーズに応え、新しい価値を創造し続けてまいります。
+                  ぜひお気軽にお声がけください。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">わにまるで新しい働き方を始めませんか？</h2>
+        <p class="text-xl mb-8 text-primary-50">
+          私たちと一緒に、地域とつながる未来をつくりましょう
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/join" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+            参加について詳しく見る
+          </a>
+          <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors">
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>

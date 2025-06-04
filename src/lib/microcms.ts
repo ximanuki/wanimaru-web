@@ -26,7 +26,7 @@ if (!MICROCMS_API_KEY || !MICROCMS_SERVICE_DOMAIN) {
   }
 }
 
-const BASE_URL = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1`;
+const BASE_URL = MICROCMS_SERVICE_DOMAIN ? `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1` : '';
 
 // --------------------------------------------------
 // HTTP クライアント
@@ -306,18 +306,28 @@ export async function getNewsList(query: NewsQuery = {}): Promise<NewsListRespon
 
 /**
  * ニュース詳細を取得する
- * @param slug - ニューススラッグ
+ * @param idOrSlug - ニュースIDまたはスラッグ
  * @returns ニュース詳細
  */
-export async function getNewsDetail(slug: string): Promise<News | null> {
+export async function getNewsDetail(idOrSlug: string): Promise<News | null> {
   try {
-    return await apiRequest<News>(`/news/${slug}`);
+    // まずIDで取得を試みる
+    const newsById = await apiRequest<News>(`/news/${idOrSlug}`);
+    if (newsById) return newsById;
   } catch (error) {
-    if (import.meta.env.DEV) {
-      console.error(`Failed to fetch news detail: ${slug}`, error);
+    // IDで見つからない場合はスラッグで検索
+    try {
+      const newsList = await getNewsList({ q: idOrSlug, limit: 1 });
+      if (newsList.contents.length > 0) {
+        return newsList.contents[0];
+      }
+    } catch (searchError) {
+      if (import.meta.env.DEV) {
+        console.error(`Failed to fetch news detail: ${idOrSlug}`, searchError);
+      }
     }
-    return null;
   }
+  return null;
 }
 
 /**

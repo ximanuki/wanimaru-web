@@ -33,16 +33,35 @@ export interface ImageAsset {
 
 export type NewsCategory = 'announcement' | 'event' | 'recruit' | 'report';
 
-export interface News extends BaseEntity {
+export interface MicroCMSImage {
+  url: string;
+  width?: number;
+  height?: number;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  revisedAt?: string;
+}
+
+export interface News {
+  id: string;
   title: string;
-  slug: string;
-  category: NewsCategory;
+  slug?: string;
+  category?: Category | NewsCategory;
   content: string;
   excerpt?: string;
-  thumbnail?: ImageAsset;
+  thumbnail?: MicroCMSImage;
   publishedAt: string;
-  isImportant: boolean;
+  isImportant?: boolean;
   tags?: string[];
+  createdAt: string;
+  updatedAt: string;
+  revisedAt?: string;
 }
 
 export interface NewsListResponse {

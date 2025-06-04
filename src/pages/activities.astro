@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+---
+
+<BaseLayout title="活動内容" description="わにまるの活動内容をご紹介。マルチワーク支援、研修プログラム、コミュニティ活動など様々な取り組みを行っています。">
+  <Header slot="header" />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-gradient-soft py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            活動内容
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed">
+            わにまるでは、マルチワークの普及と地域活性化を目指して<br>
+            様々な活動を展開しています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Activities -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">主な活動</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Activity 1 -->
+            <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">コンサルティング画像</span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">マルチワーク支援コンサルティング</h3>
+                <p class="text-gray-600 mb-4">
+                  個人や企業のマルチワーク導入をサポートします。働き方の多様化や効率化を実現するためのコンサルティングサービスです。
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">個別相談</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">導入支援</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">フォローアップ</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                  <span class="text-sm font-medium text-primary">対象: 個人事業主、中小企業、フリーランス</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 2 -->
+            <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">研修画像</span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">スキルアップ研修プログラム</h3>
+                <p class="text-gray-600 mb-4">
+                  マルチワークに必要なスキルを身につけるための研修プログラムです。実践的な内容で、即戦力となる人材を育成します。
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">実践的研修</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">認定制度</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">ネットワーキング</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                  <span class="text-sm font-medium text-primary">対象: 組合員、求職者、学生</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 3 -->
+            <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">マッチング画像</span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">企業マッチング支援</h3>
+                <p class="text-gray-600 mb-4">
+                  地域企業と人材のマッチングを支援します。企業のニーズと個人のスキルを最適にマッチングし、Win-Winの関係を構築します。
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">ニーズ分析</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">スキルマッチング</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">継続サポート</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                  <span class="text-sm font-medium text-primary">対象: 地域企業、個人事業主</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity 4 -->
+            <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+              <div class="h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">コミュニティ画像</span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">コミュニティ形成</h3>
+                <p class="text-gray-600 mb-4">
+                  マルチワーカー同士のネットワーク形成を支援します。定期的なイベントや交流会を通じて、活発なコミュニティを育成します。
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">定期交流会</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">オンライン勉強会</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                    <span class="text-sm text-gray-600">地域イベント</span>
+                  </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                  <span class="text-sm font-medium text-primary">対象: 全てのメンバー</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">成功事例</h2>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <span class="text-primary font-bold text-xl">A</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">IT企業での業務効率化</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                地域のIT企業において、マルチワーク導入により業務効率が30%向上。従業員満足度も大幅に改善されました。
+              </p>
+              <div class="text-xs text-primary font-medium">業務効率化 / チーム連携</div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <span class="text-primary font-bold text-xl">B</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">農業×デザインの新展開</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                農業従事者がデザインスキルを習得し、農産物のブランディングを手がけ、売上が2倍に増加した事例です。
+              </p>
+              <div class="text-xs text-primary font-medium">スキル拡張 / 収益向上</div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <span class="text-primary font-bold text-xl">C</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">地域イベント企画運営</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                複数の専門スキルを持つメンバーが連携し、地域の大型イベントを成功に導いた事例です。
+              </p>
+              <div class="text-xs text-primary font-medium">地域貢献 / チーム連携</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kawanishi Charm -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">川西町の魅力</h2>
+          
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">自然豊かな環境でのワークライフバランス</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-white text-xs">1</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-1">豊かな自然環境</h4>
+                    <p class="text-gray-600 text-sm">四季折々の美しい景色に囲まれた環境で、心身ともにリフレッシュしながら働けます。</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-white text-xs">2</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-1">温かいコミュニティ</h4>
+                    <p class="text-gray-600 text-sm">地域住民の結束が強く、新しいメンバーも温かく迎え入れる文化があります。</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
+                    <span class="text-white text-xs">3</span>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900 mb-1">アクセスの良さ</h4>
+                    <p class="text-gray-600 text-sm">山形市や米沢市へのアクセスも良く、都市部との連携も取りやすい立地です。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="h-80 bg-gray-200 rounded-xl flex items-center justify-center">
+              <span class="text-gray-500">川西町の風景写真</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">活動に参加してみませんか？</h2>
+        <p class="text-xl mb-8 text-primary-50">
+          まずはお気軽にお問い合わせください
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/join" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+            参加について詳しく見る
+          </a>
+          <a href="/contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors">
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
