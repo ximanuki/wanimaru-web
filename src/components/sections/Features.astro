@@ -1,7 +1,8 @@
 ---
 // Features section component
-import { Button } from '../ui/button';
+import { AnimatedButton } from '../ui/animated-button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { AnimatedCard } from '../ui/animated-card';
 ---
 
 <section class="section-padding bg-gradient-soft">
@@ -19,8 +20,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
     <!-- Features Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
       <!-- Feature 1: Flexible Work -->
-      <div class="group">
-        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+      <AnimatedCard client:load animationType="lift" delay={0}>
+        <Card className="text-center bg-white shadow-enhanced rounded-xl p-6">
           <CardHeader>
             <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,11 +60,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
           </ul>
         </CardContent>
       </Card>
-      </div>
+      </AnimatedCard>
 
       <!-- Feature 2: Community Connection -->
-      <div class="group">
-        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+      <AnimatedCard client:load animationType="tilt" delay={0.2}>
+        <Card className="text-center bg-white shadow-enhanced rounded-xl p-6">
           <CardHeader>
             <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,11 +103,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
           </ul>
         </CardContent>
       </Card>
-      </div>
+      </AnimatedCard>
 
       <!-- Feature 3: Skill Development -->
-      <div class="group">
-        <Card client:load className="text-center bg-white shadow-enhanced hover:shadow-enhanced-hover transform hover:-translate-y-1 transition-all duration-300 rounded-xl p-6">
+      <AnimatedCard client:load animationType="glow" delay={0.4}>
+        <Card className="text-center bg-white shadow-enhanced rounded-xl p-6">
           <CardHeader>
             <div class="w-16 h-16 mx-auto bg-primary rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300 mb-4">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,22 +146,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
           </ul>
         </CardContent>
       </Card>
-      </div>
+      </AnimatedCard>
     </div>
 
-    <!-- Bottom CTA -->
-    <div class="text-center mt-16">
-      <p class="text-lg text-gray-600 mb-6">
-        わにまると一緒に、新しい働き方を始めませんか？
-      </p>
-      <Button 
-        client:load
-        asChild
-        size="lg"
-        className="shadow-medium hover:shadow-large transform hover:-translate-y-1 transition-all text-lg px-8 py-3 font-heading rounded-full"
-      >
-        <a href="/join">参加について詳しく見る</a>
-      </Button>
-    </div>
   </div>
 </section>

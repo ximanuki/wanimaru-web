@@ -49,24 +49,36 @@ const siteTitle = title === "わにまる" ? title : `${title} | わにまる`;
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
   
-  <!-- Google Fonts -->
+  <!-- Performance optimizations -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  
+  <!-- Google Fonts with critical path optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
   
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/images/assets/wanimaru.png" as="image" type="image/png" />
+  
   <!-- Schema.org structured data will be added by individual pages -->
 </head>
 <body class="font-sans antialiased">
+  <!-- Skip to main content link for screen readers -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-dark">
+    メインコンテンツにスキップ
+  </a>
+  
   <div id="app" class="min-h-screen flex flex-col">
-    <header>
+    <header role="banner">
       <slot name="header" />
     </header>
     
-    <main class="flex-1">
+    <main id="main-content" class="flex-1" role="main">
       <slot />
     </main>
     
-    <footer>
+    <footer role="contentinfo">
       <slot name="footer" />
     </footer>
   </div>

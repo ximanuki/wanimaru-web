@@ -12,7 +12,7 @@ import Footer from '../components/common/Footer.astro';
     <section class="bg-gradient-soft py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-heading">
             参加する
           </h1>
           <p class="text-xl text-gray-600 leading-relaxed">
@@ -27,57 +27,100 @@ import Footer from '../components/common/Footer.astro';
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">募集要項</h2>
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 font-heading">募集要項</h2>
           
-          <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-soft">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 font-heading">基本情報</h3>
+                <dl class="space-y-3">
+                  <div class="flex">
+                    <dt class="w-24 font-medium text-gray-600">雇用形態:</dt>
+                    <dd class="text-gray-900">正社員（無期雇用）</dd>
+                  </div>
+                  <div class="flex">
+                    <dt class="w-24 font-medium text-gray-600">勤務地:</dt>
+                    <dd class="text-gray-900">川西町内各事業所</dd>
+                  </div>
+                  <div class="flex">
+                    <dt class="w-24 font-medium text-gray-600">勤務時間:</dt>
+                    <dd class="text-gray-900">8:00-17:00（事業所により調整可）</dd>
+                  </div>
+                  <div class="flex">
+                    <dt class="w-24 font-medium text-gray-600">休日:</dt>
+                    <dd class="text-gray-900">週休2日制（土日祝、相談可）</dd>
+                  </div>
+                  <div class="flex">
+                    <dt class="w-24 font-medium text-gray-600">通勤:</dt>
+                    <dd class="text-gray-900">自家用車必須</dd>
+                  </div>
+                </dl>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 font-heading">待遇・福利厚生</h3>
+                <ul class="space-y-2 text-gray-600">
+                  <li>• 各種社会保険完備</li>
+                  <li>• 通勤手当支給</li>
+                  <li>• 研修制度充実</li>
+                  <li>• 資格取得支援（組合負担）</li>
+                  <li>• 有給休暇制度</li>
+                  <li>• 兼業可能（要相談）</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Requirements -->
+          <div class="mt-8 grid md:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-xl shadow-soft">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">対象者</h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6 font-heading">求める人材</h3>
               <ul class="space-y-3">
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">新しい働き方に挑戦したい方</span>
+                  <span class="text-gray-600">年齢・経験不問</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">地域に貢献したい方</span>
+                  <span class="text-gray-600">普通自動車運転免許（必須）</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">複数のスキルを活かしたい方</span>
+                  <span class="text-gray-600">地域での暮らしに関心のある方</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">フリーランス・個人事業主</span>
+                  <span class="text-gray-600">季節の変化を楽しめる方</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">副業・複業を検討中の方</span>
+                  <span class="text-gray-600">様々な仕事に挑戦したい方</span>
                 </li>
               </ul>
             </div>
             
             <div class="bg-white p-8 rounded-xl shadow-soft">
-              <h3 class="text-xl font-semibold text-gray-900 mb-6">組合員の特典</h3>
+              <h3 class="text-xl font-semibold text-gray-900 mb-6 font-heading">予定している派遣先業務</h3>
               <ul class="space-y-3">
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-accent rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">マルチワーク案件の紹介</span>
+                  <span class="text-gray-600">農業（田植え・収穫・草刈り）</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-accent rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">スキルアップ研修の参加</span>
+                  <span class="text-gray-600">除雪・道路維持作業</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-accent rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">コミュニティイベントへの参加</span>
+                  <span class="text-gray-600">観光施設・温泉での業務</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-accent rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">個別コンサルティングの利用</span>
+                  <span class="text-gray-600">地域イベント運営サポート</span>
                 </li>
                 <li class="flex items-start">
                   <span class="w-2 h-2 bg-accent rounded-full mr-3 mt-2"></span>
-                  <span class="text-gray-600">地域企業とのネットワーキング</span>
+                  <span class="text-gray-600">一般事務・軽作業</span>
                 </li>
               </ul>
             </div>
@@ -85,18 +128,18 @@ import Footer from '../components/common/Footer.astro';
           
           <!-- Membership Details -->
           <div class="mt-12 bg-gray-50 p-8 rounded-xl">
-            <h3 class="text-xl font-semibold text-gray-900 mb-6">組合員について</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-6 font-heading">組合員について</h3>
             <div class="grid md:grid-cols-3 gap-6">
               <div>
-                <h4 class="font-semibold text-gray-900 mb-2">出資金</h4>
+                <h4 class="font-semibold text-gray-900 mb-2 font-heading">出資金</h4>
                 <p class="text-gray-600">詳細はお問い合わせください</p>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-2">年会費</h4>
+                <h4 class="font-semibold text-gray-900 mb-2 font-heading">年会費</h4>
                 <p class="text-gray-600">詳細はお問い合わせください</p>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-2">活動頻度</h4>
+                <h4 class="font-semibold text-gray-900 mb-2 font-heading">活動頻度</h4>
                 <p class="text-gray-600">個人のペースに合わせて調整可能</p>
               </div>
             </div>
@@ -109,14 +152,14 @@ import Footer from '../components/common/Footer.astro';
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">申し込みフロー</h2>
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 font-heading">申し込みフロー</h2>
           
           <div class="grid md:grid-cols-4 gap-8">
             <div class="text-center">
               <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white font-bold text-xl">1</span>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">お申し込み</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2 font-heading">お申し込み</h3>
               <p class="text-gray-600 text-sm">
                 下記のフォームまたはお電話でお申し込みください
               </p>
@@ -126,7 +169,7 @@ import Footer from '../components/common/Footer.astro';
               <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white font-bold text-xl">2</span>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">個別面談</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2 font-heading">個別面談</h3>
               <p class="text-gray-600 text-sm">
                 ご希望やスキルについて詳しくお聞かせください
               </p>
@@ -136,7 +179,7 @@ import Footer from '../components/common/Footer.astro';
               <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white font-bold text-xl">3</span>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">加入手続き</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2 font-heading">加入手続き</h3>
               <p class="text-gray-600 text-sm">
                 必要書類の提出と出資金のお手続きをお願いします
               </p>
@@ -146,7 +189,7 @@ import Footer from '../components/common/Footer.astro';
               <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span class="text-white font-bold text-xl">4</span>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">活動開始</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2 font-heading">活動開始</h3>
               <p class="text-gray-600 text-sm">
                 オリエンテーションを経て活動を開始していただきます
               </p>
@@ -160,7 +203,7 @@ import Footer from '../components/common/Footer.astro';
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">参加申し込みフォーム</h2>
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 font-heading">参加申し込みフォーム</h2>
           
           <div class="bg-white p-8 rounded-xl shadow-soft">
             <form class="space-y-6">
@@ -271,34 +314,48 @@ import Footer from '../components/common/Footer.astro';
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">よくある質問</h2>
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 font-heading">よくある質問</h2>
           
           <div class="space-y-6">
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Q. 組合員になるのに特別なスキルは必要ですか？</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 年齢制限や経験、資格は必要ですか？</h3>
               <p class="text-gray-600">
-                A. 特別なスキルは必要ありません。やる気と学習意欲があれば、どなたでも参加いただけます。スキルアップのための研修プログラムもご用意しています。
+                A. 年齢制限や経験の有無・特別な資格は必要ありません。ただし、自家用車での通勤は必要となります。また、従事する仕事により資格が必要な場合は、組合負担で研修や講習を受けていただきます。
               </p>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Q. 川西町外に住んでいても参加できますか？</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 川西町外に住んでいても働けますか？</h3>
               <p class="text-gray-600">
-                A. はい、参加可能です。リモートワークにも対応しており、オンラインでの活動も積極的に行っています。
+                A. 働けます。町内の方はもちろん、町外の方も移住をお考えの方も大歓迎です。山形市や米沢市からの通勤も可能です。
               </p>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Q. 本業がある中でも参加できますか？</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 兼業はできますか？</h3>
               <p class="text-gray-600">
-                A. はい、副業・複業として参加される方も多くいらっしゃいます。個人のペースに合わせて活動いただけます。
+                A. 兼業可能です。ご相談ください。勤務日数、曜日、時間帯などできる限りご相談に応じます。
               </p>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Q. どのような案件がありますか？</h3>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 子育て中ですが、短時間でも働くことはできますか？</h3>
               <p class="text-gray-600">
-                A. IT関連、デザイン、マーケティング、イベント企画、農業支援など多様な案件があります。メンバーのスキルに応じてマッチングを行います。
+                A. できます。勤務日数、曜日、時間帯などできる限りご相談に応じます。組合の仕組みを活用して、子育てと両立できる働き方をサポートします。
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 福利厚生はありますか？</h3>
+              <p class="text-gray-600">
+                A. 各種社会保険に加入しています。正規職員として協同組合と無期雇用の雇用契約を結ぶため、安心して地域で働くことができます。
+              </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-soft">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3 font-heading">Q. 移住のための支援はありますか？</h3>
+              <p class="text-gray-600">
+                A. 川西町では空き家情報の提供やアパートのご紹介を行っております。詳しくは川西町役場または組合までお問い合わせください。
               </p>
             </div>
           </div>
@@ -310,21 +367,21 @@ import Footer from '../components/common/Footer.astro';
     <section class="py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">お問い合わせ</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6 font-heading">お問い合わせ</h2>
           <p class="text-gray-600 mb-8">
             ご不明な点がございましたら、お気軽にお問い合わせください
           </p>
           
           <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">電話でのお問い合わせ</h3>
-              <p class="text-2xl font-bold text-primary mb-2">0238-42-2111</p>
+              <h3 class="text-lg font-semibold text-gray-900 mb-4 font-heading">電話でのお問い合わせ</h3>
+              <p class="text-2xl font-bold text-primary mb-2">0238-42-0000</p>
               <p class="text-gray-600 text-sm">平日 9:00-18:00</p>
             </div>
             
             <div class="bg-white p-6 rounded-xl shadow-soft">
-              <h3 class="text-lg font-semibold text-gray-900 mb-4">メールでのお問い合わせ</h3>
-              <p class="text-xl font-semibold text-primary mb-2">info@wanimaru.jp</p>
+              <h3 class="text-lg font-semibold text-gray-900 mb-4 font-heading">メールでのお問い合わせ</h3>
+              <p class="text-xl font-semibold text-primary mb-2">info@wanimaru.com</p>
               <a href="/contact" class="inline-block bg-primary text-white px-6 py-2 rounded-full text-sm hover:bg-primary-600 transition-colors">
                 お問い合わせフォーム
               </a>

@@ -31,7 +31,7 @@ const { contents: news, totalCount } = newsData;
     <section class="bg-gradient-soft py-16">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 class="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-6">
             ニュース
           </h1>
           <p class="text-xl text-gray-600 leading-relaxed">
@@ -76,7 +76,7 @@ const { contents: news, totalCount } = newsData;
         <div class="max-w-6xl mx-auto">
           {news.filter(item => item.isImportant).length > 0 && (
             <div class="mb-12">
-              <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <h2 class="text-2xl font-bold font-heading text-gray-900 mb-6 flex items-center">
                 <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
                 重要なお知らせ
               </h2>
@@ -93,7 +93,7 @@ const { contents: news, totalCount } = newsData;
                             {formatDate(item.publishedAt)}
                           </time>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                        <h3 class="text-lg font-semibold font-heading text-gray-900 mb-2">
                           <a href={`/news/${item.slug || item.id}`} class="hover:text-primary transition-colors">
                             {item.title}
                           </a>
@@ -118,7 +118,7 @@ const { contents: news, totalCount } = newsData;
 
           <!-- Regular News -->
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">最新ニュース</h2>
+            <h2 class="text-2xl font-bold font-heading text-gray-900 mb-8">最新ニュース</h2>
             <div class="grid gap-8">
               {news.filter(item => !item.isImportant).map((item) => (
                 <article class="bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-medium transition-shadow">
@@ -141,7 +141,7 @@ const { contents: news, totalCount } = newsData;
                           {formatDate(item.publishedAt)}
                         </time>
                       </div>
-                      <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                      <h3 class="text-xl font-semibold font-heading text-gray-900 mb-3">
                         <a href={`/news/${item.slug || item.id}`} class="hover:text-primary transition-colors">
                           {item.title}
                         </a>
@@ -204,7 +204,7 @@ const { contents: news, totalCount } = newsData;
     <section class="py-16 bg-primary text-white">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-6">最新情報をお届けします</h2>
+          <h2 class="text-3xl font-bold font-heading mb-6">最新情報をお届けします</h2>
           <p class="text-xl mb-8 text-primary-50">
             わにまるの最新ニュースやイベント情報をメールでお知らせします
           </p>

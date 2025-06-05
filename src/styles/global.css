@@ -69,12 +69,12 @@
   }
   
   body {
-    @apply text-gray-900;
+    @apply text-gray-900 font-sans;
     font-feature-settings: "palt";
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold font-heading;
     line-height: 1.7;
   }
   
@@ -105,11 +105,19 @@
   }
   
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed font-sans;
   }
   
   a {
-    @apply transition-colors duration-200;
+    @apply transition-colors duration-200 font-sans;
+  }
+  
+  button {
+    @apply font-heading;
+  }
+  
+  input, textarea, select {
+    @apply font-sans;
   }
   
   /* Focus styles */

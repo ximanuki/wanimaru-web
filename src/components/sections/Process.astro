@@ -1,0 +1,188 @@
+---
+// Process/Flow section - 参加までの流れ
+import { AnimatedCard } from '../ui/animated-card';
+import { AnimatedButton } from '../ui/animated-button';
+import JapaneseText from '../ui/JapaneseText';
+---
+
+<section class="section-padding bg-gradient-soft">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+        参加までの<span class="text-primary">簡単3ステップ</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <JapaneseText>
+          未経験でも安心。丁寧なサポートで、あなたに合った働き方を一緒に見つけます
+        </JapaneseText>
+      </p>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+      <!-- Step 1: 相談 -->
+      <AnimatedCard client:load animationType="lift" delay={0}>
+        <div class="text-center relative">
+          <!-- Step Number -->
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg z-10">
+            1
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-enhanced">
+            <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </div>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-heading">まずは相談</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              <JapaneseText>
+                お電話やメールで気軽にご相談ください。あなたの希望や不安をお聞かせください
+              </JapaneseText>
+            </p>
+            
+            <div class="space-y-2 text-sm text-gray-500">
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                電話・メール・LINE対応
+              </div>
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                相談料無料
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedCard>
+
+      <!-- Step 2: 体験 -->
+      <AnimatedCard client:load animationType="tilt" delay={0.2}>
+        <div class="text-center relative">
+          <!-- Step Number -->
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg z-10">
+            2
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-enhanced">
+            <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-heading">実際に体験</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              <JapaneseText>
+                短期間の体験プログラムで、実際の作業を経験。自分に合うかどうか確認できます
+              </JapaneseText>
+            </p>
+            
+            <div class="space-y-2 text-sm text-gray-500">
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                1〜3日の体験期間
+              </div>
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                サポートスタッフ同行
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedCard>
+
+      <!-- Step 3: 参加 -->
+      <AnimatedCard client:load animationType="glow" delay={0.4}>
+        <div class="text-center relative">
+          <!-- Step Number -->
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg z-10">
+            3
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-enhanced">
+            <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+              </svg>
+            </div>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-heading">正式参加</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              <JapaneseText>
+                組合員として正式参加。あなたのペースで複数の仕事にチャレンジできます
+              </JapaneseText>
+            </p>
+            
+            <div class="space-y-2 text-sm text-gray-500">
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                月額費用：準備中
+              </div>
+              <div class="flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                継続的なサポート
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedCard>
+    </div>
+
+    <!-- Action Area -->
+    <div class="text-center bg-white rounded-2xl p-8 md:p-12 shadow-enhanced">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-heading">
+        まずは気軽にご相談ください
+      </h3>
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+        <JapaneseText>
+          不安なこと、分からないことがあれば何でもお聞かせください。<br class="hidden sm:block">
+          一緒にあなたに合った働き方を見つけましょう。
+        </JapaneseText>
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <AnimatedButton 
+          asChild
+          size="lg"
+          animationType="lift"
+          className="bg-primary hover:bg-primary-dark text-white font-bold shadow-lg hover:shadow-xl transition-all text-lg px-10 py-4 font-heading rounded-full border-0 cursor-pointer"
+        >
+          <a href="/contact" class="inline-flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            相談してみる
+          </a>
+        </AnimatedButton>
+        <AnimatedButton 
+          asChild
+          variant="outline"
+          size="lg"
+          animationType="glow"
+          className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold shadow-md hover:shadow-lg transition-all text-lg px-10 py-4 font-heading rounded-full cursor-pointer"
+        >
+          <a href="/join" class="inline-flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            詳しく見る
+          </a>
+        </AnimatedButton>
+      </div>
+    </div>
+  </div>
+</section>

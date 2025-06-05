@@ -1,0 +1,86 @@
+---
+// Trust indicators section
+import { AnimatedCard } from '../ui/animated-card';
+---
+
+<section class="section-padding bg-white">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-heading">
+        安心して働ける環境を<span class="text-primary">お約束</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        2025年設立予定の新しい組織だからこそ、<br class="hidden sm:block">
+        みなさまの信頼を第一に活動しています
+      </p>
+    </div>
+
+    <!-- Trust Indicators Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <!-- Enterprise Partnership -->
+      <AnimatedCard client:load animationType="lift" delay={0}>
+        <div class="text-center p-4 md:p-6 bg-gray-50 rounded-xl">
+          <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3 md:mb-4">
+            <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <div class="text-sm md:text-lg font-bold text-gray-900 mb-1 md:mb-2 font-heading">企業連携</div>
+          <div class="text-xs md:text-sm text-gray-600">地域企業との<br>パートナーシップ</div>
+        </div>
+      </AnimatedCard>
+
+      <!-- Legal Support -->
+      <AnimatedCard client:load animationType="lift" delay={0.1}>
+        <div class="text-center p-4 md:p-6 bg-gray-50 rounded-xl">
+          <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3 md:mb-4">
+            <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div class="text-sm md:text-lg font-bold text-gray-900 mb-1 md:mb-2 font-heading">法的保護</div>
+          <div class="text-xs md:text-sm text-gray-600">労働法に基づく<br>適正な労働条件</div>
+        </div>
+      </AnimatedCard>
+
+      <!-- Local Government -->
+      <AnimatedCard client:load animationType="lift" delay={0.2}>
+        <div class="text-center p-4 md:p-6 bg-gray-50 rounded-xl">
+          <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3 md:mb-4">
+            <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <div class="text-sm md:text-lg font-bold text-gray-900 mb-1 md:mb-2 font-heading">行政連携</div>
+          <div class="text-xs md:text-sm text-gray-600">川西町と連携した<br>地域活性化事業</div>
+        </div>
+      </AnimatedCard>
+
+      <!-- Training Support -->
+      <AnimatedCard client:load animationType="lift" delay={0.3}>
+        <div class="text-center p-4 md:p-6 bg-gray-50 rounded-xl">
+          <div class="w-12 h-12 md:w-16 md:h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-3 md:mb-4">
+            <svg class="w-6 h-6 md:w-8 md:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <div class="text-sm md:text-lg font-bold text-gray-900 mb-1 md:mb-2 font-heading">研修制度</div>
+          <div class="text-xs md:text-sm text-gray-600">未経験でも安心<br>充実したサポート</div>
+        </div>
+      </AnimatedCard>
+    </div>
+
+    <!-- Mission Statement -->
+    <div class="mt-16 text-center">
+      <div class="max-w-4xl mx-auto p-8 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-heading">私たちの使命</h3>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          「地域とつながる、未来をつくる」という理念のもと、<br class="hidden sm:block">
+          マルチワークを通じて持続可能な地域社会の実現を目指します。<br class="hidden sm:block">
+          一人ひとりが自分らしく働き、地域とともに成長できる環境を提供します。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

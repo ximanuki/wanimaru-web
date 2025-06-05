@@ -11,7 +11,7 @@ import type { SiteConfig, SocialLinks, ContactInfo, Statistics } from '../types'
 export const SITE_CONFIG: SiteConfig = {
   name: 'わにまる',
   description: '地域とつながる、未来をつくる。マルチワークで新しい働き方を提案する組織です。',
-  url: 'https://wanimaru.jp',
+  url: 'https://wanimaru.com',
   logo: '/images/assets/wanimaru.png',
   locale: 'ja',
   defaultMetaImage: '/images/og/wanimaru-og.jpg',
@@ -73,8 +73,8 @@ export const SOCIAL_LINKS: SocialLinks = {
 // --------------------------------------------------
 
 export const CONTACT_INFO: ContactInfo = {
-  email: 'info@wanimaru.jp',
-  phone: '0238-42-2111',
+  email: 'info@wanimaru.com',
+  phone: '0238-42-0000',
   address: {
     postal: '999-0121',
     prefecture: '山形県',
@@ -89,10 +89,10 @@ export const CONTACT_INFO: ContactInfo = {
 // --------------------------------------------------
 
 export const STATISTICS: Statistics = {
-  members: 100, // 参加メンバー数
-  projects: 50, // プロジェクト実績
-  partnerships: 10, // 協力企業・団体数
-  yearsOfOperation: 3, // 運営年数 (仮)
+  members: 0, // 参加組合員数（設立準備中）
+  projects: 0, // 派遣先事業所数（準備中）
+  partnerships: 3, // 協力予定企業・団体数
+  yearsOfOperation: 0, // 運営年数（2025年設立）
 };
 
 // --------------------------------------------------
